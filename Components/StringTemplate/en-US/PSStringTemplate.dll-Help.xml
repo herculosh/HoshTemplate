@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems xmlns="http://msh" schema="maml">
+
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Invoke-StringTemplate</command:name>
+<command:verb>Invoke</command:verb>
+<command:noun>StringTemplate</command:noun>
+<maml:description><maml:para>Renders a Template object.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>This cmdlet will take a Template object from a TemplateGroup, add specified parameters and render the template into a string. It can use an existing Template object (from the New-StringTemplateGroup cmdlet) or it can create a new Template using a string specified in the "Definition" parameter.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Invoke-StringTemplate</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Parameters</maml:name>
+<maml:Description><maml:para>Specifies the arguments to pass to the template.  If a IDictionary object (such as a hashtable) is specified, the entries will be used as arguments.  All other objects will use the objects properties as arguments.
+</maml:para>
+<maml:para>Some methods will also be added as arguments if they meet the following criteria:
+</maml:para>
+<maml:para>- Has a return value
+</maml:para>
+<maml:para>- Has a parameterless overload
+</maml:para>
+<maml:para>- The name follows the format "GetSomething"
+</maml:para>
+<maml:para>- Does not have a matching property with value
+</maml:para>
+<maml:para>
+</maml:para>
+<maml:para>As an example, the method RuntimeMethodInfo.GetParameters() would be added as an argument with the name "Parameters".  This is to stay consistent with StringTemplate4 behavior. See documentation for the StringTemplate4 template engine more information.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
+<dev:type><maml:name>PSObject</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Definition</maml:name>
+<maml:Description><maml:para>Specifies a Template definition string to create a new Template to be rendered.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+<command:syntaxItem><maml:name>Invoke-StringTemplate</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none"><maml:name>Group</maml:name>
+<maml:Description><maml:para>Specifies an existing TemplateGroup to retrieve a template from.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TemplateGroupInfo</command:parameterValue>
+<dev:type><maml:name>TemplateGroupInfo</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Parameters</maml:name>
+<maml:Description><maml:para>Specifies the arguments to pass to the template.  If a IDictionary object (such as a hashtable) is specified, the entries will be used as arguments.  All other objects will use the objects properties as arguments.
+</maml:para>
+<maml:para>Some methods will also be added as arguments if they meet the following criteria:
+</maml:para>
+<maml:para>- Has a return value
+</maml:para>
+<maml:para>- Has a parameterless overload
+</maml:para>
+<maml:para>- The name follows the format "GetSomething"
+</maml:para>
+<maml:para>- Does not have a matching property with value
+</maml:para>
+<maml:para>
+</maml:para>
+<maml:para>As an example, the method RuntimeMethodInfo.GetParameters() would be added as an argument with the name "Parameters".  This is to stay consistent with StringTemplate4 behavior. See documentation for the StringTemplate4 template engine more information.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
+<dev:type><maml:name>PSObject</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Name"><maml:name>Name</maml:name>
+<maml:Description><maml:para>Specifies the name of the Template within the TemplateGroup.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Definition</maml:name>
+<maml:Description><maml:para>Specifies a Template definition string to create a new Template to be rendered.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none"><maml:name>Group</maml:name>
+<maml:Description><maml:para>Specifies an existing TemplateGroup to retrieve a template from.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TemplateGroupInfo</command:parameterValue>
+<dev:type><maml:name>TemplateGroupInfo</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Name"><maml:name>Name</maml:name>
+<maml:Description><maml:para>Specifies the name of the Template within the TemplateGroup.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>Parameters</maml:name>
+<maml:Description><maml:para>Specifies the arguments to pass to the template.  If a IDictionary object (such as a hashtable) is specified, the entries will be used as arguments.  All other objects will use the objects properties as arguments.
+</maml:para>
+<maml:para>Some methods will also be added as arguments if they meet the following criteria:
+</maml:para>
+<maml:para>- Has a return value
+</maml:para>
+<maml:para>- Has a parameterless overload
+</maml:para>
+<maml:para>- The name follows the format "GetSomething"
+</maml:para>
+<maml:para>- Does not have a matching property with value
+</maml:para>
+<maml:para>
+</maml:para>
+<maml:para>As an example, the method RuntimeMethodInfo.GetParameters() would be added as an argument with the name "Parameters".  This is to stay consistent with StringTemplate4 behavior. See documentation for the StringTemplate4 template engine more information.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
+<dev:type><maml:name>PSObject</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>PSStringTemplate.TemplateGroupInfo</maml:name>
+</dev:type>
+<maml:description><maml:para>You can pass template groups from New-StringTemplateGroup to this cmdlet.  You can also pass objects with a property named "Group".
+</maml:para>
+</maml:description>
+</command:inputType>
+<command:inputType><dev:type><maml:name>System.String</maml:name>
+</dev:type>
+<maml:description><maml:para>You can pass objects with a property named "Name" as template names to this cmdlet.
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.String</maml:name>
+</dev:type>
+<maml:description><maml:para>The rendered template will be returned as a string.
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+<dev:code>PS&gt; Invoke-StringTemplate -Definition '&lt;language&gt; is very &lt;adjective&gt;!' -Parameters @{
+    language = 'PowerShell'
+    adjective = 'cool'
+}
+
+Output
+------
+
+PowerShell is very cool!</dev:code>
+<dev:remarks><maml:para>
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+<dev:code>PS&gt; $definition = 'Name: &lt;Name&gt;&lt;\n&gt;Commands: &lt;ExportedCommands; separator=", "&gt;'
+PS&gt; Invoke-StringTemplate -Definition $definition -Parameters (Get-Module PSReadLine)
+
+Output
+------
+
+Name: PSReadline
+Commands: Get-PSReadlineKeyHandler, Get-PSReadlineOption, Remove-PSReadlineKeyHandler, Set-PSReadlineKeyHandler, Set-PSReadlineOption, PSConsoleHostReadline</dev:code>
+<dev:remarks><maml:para>
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+<dev:code>PS&gt; $definition = @'
+    Param(parameter) ::= "[&lt;parameter.ParameterType.Name&gt;] $&lt;parameter.Name&gt;"
+    Method(member) ::= &lt;&lt;
+[&lt;member.ReturnType.Name&gt;]&lt;if(member.IsStatic)&gt; static&lt;endif&gt; &lt;member.Name&gt; (&lt;member.Parameters:Param(); separator=", "&gt;) {
+    throw [NotImplementedException]::new()
+}
+&gt;&gt;
+    Class(Name, DeclaredMethods) ::= &lt;&lt;
+class MyClass : &lt;Name&gt; {
+    &lt;DeclaredMethods:Method(); separator="\n\n"&gt;
+}
+&gt;&gt;
+'@
+PS&gt; $group = New-StringTemplateGroup -Definition $definition
+PS&gt; $group | Invoke-StringTemplate -Name Class -Parameters ([System.Runtime.InteropServices.ICustomMarshaler])
+
+Output
+------
+
+class MyClass : ICustomMarshaler {
+    [Object] MarshalNativeToManaged ([IntPtr] $pNativeData) {
+        throw [NotImplementedException]::new()
+    }
+
+    [IntPtr] MarshalManagedToNative ([Object] $ManagedObj) {
+        throw [NotImplementedException]::new()
+    }
+
+    [Void] CleanUpNativeData ([IntPtr] $pNativeData) {
+        throw [NotImplementedException]::new()
+    }
+
+    [Void] CleanUpManagedData ([Object] $ManagedObj) {
+        throw [NotImplementedException]::new()
+    }
+
+    [Int32] GetNativeDataSize () {
+        throw [NotImplementedException]::new()
+    }
+}</dev:code>
+<dev:remarks><maml:para>
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>New-StringTemplateGroup</command:name>
+<command:verb>New</command:verb>
+<command:noun>StringTemplateGroup</command:noun>
+<maml:description><maml:para>Define a group of templates.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>The New-StringTemplateGroup cmdlet allows you to create a group of templates using the group definition syntax.  Templates within a group can reference other templates in the same group.
+</maml:para>
+<maml:para>You can use this to enumerate arrays, call different templates based on conditions, or just for better organization.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>New-StringTemplateGroup</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Definition</maml:name>
+<maml:Description><maml:para>The group definition string to use to compile a template group.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Definition</maml:name>
+<maml:Description><maml:para>The group definition string to use to compile a template group.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>PSStringTemplate.TemplateGroupInfo</maml:name>
+</dev:type>
+<maml:description><maml:para>The compiled template group is returned to the pipeline. This can then be passed to the Invoke-StringTemplate cmdlet for rendering.
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+<dev:code>PS&gt; $group = New-StringTemplateGroup -Definition @'
+
+    memberTemplate(Name, Parameters, ReturnType) ::= &lt;&lt;
+&lt;Name&gt;&lt;if(ReturnType)&gt;(&lt;Parameters:paramTemplate(); separator=", "&gt;)&lt;endif&gt;
+&gt;&gt;
+
+    paramTemplate(param) ::= "$&lt;param.Name&gt;"
+'@
+PS&gt; $group | Invoke-StringTemplate -Name memberTemplate ([string].GetProperty('Length'))
+Length
+PS&gt; $group | Invoke-StringTemplate -Name memberTemplate ([string].GetMethod('Clone'))
+Clone()
+PS&gt; $group | Invoke-StringTemplate -Name memberTemplate ([string].GetMethod('IsNullOrWhiteSpace'))
+IsNullOrWhiteSpace($value)
+PS&gt; $group | Invoke-StringTemplate -Name memberTemplate ([string].GetMethod('Insert'))
+Insert($startIndex, $value)</dev:code>
+<dev:remarks><maml:para>Create a template to generate different member expressions from MemberInfo objects.
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+</helpItems>
